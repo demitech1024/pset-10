@@ -1,4 +1,5 @@
 #!/bin/bash
+dir=$(pwd -P)
 
-javac -classpath './src/' ./src/*/*.java
-java -classpath './src/' controller.Application
+javac -d bin -classpath $dir/lib/gson-2.8.2.jar ./src/*/*.java
+java -classpath $dir/bin:$dir/lib/gson-2.8.2.jar controller.Application
