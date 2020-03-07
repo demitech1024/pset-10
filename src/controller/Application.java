@@ -17,7 +17,7 @@ public class Application {
         try {
             jsonFile = new BufferedReader(new FileReader("../data/words.json"));
         } catch (Exception IOException) {
-            System.out.println("Could not find words.json file.");
+            System.out.println("Could not find words.json file."); 
         }
 
         
