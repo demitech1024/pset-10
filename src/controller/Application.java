@@ -5,17 +5,23 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-
-import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 
 import javax.swing.*;
+
+import java.util.Arrays;
+
 import graphics.Display;
+import data.Word;
 
 public class Application {
     public static void main(String[] args) throws IOException {
-                
-        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/src/data/words.json"));
 
+        Gson gson = new Gson();
+        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/src/data/words.json"));
+        Word[] words = gson.fromJson(jsonFile, Word[].class);
         
 
         // JFrame frame = Display.createFrame();
