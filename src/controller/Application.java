@@ -20,7 +20,7 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         Gson gson = new Gson();
-        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/src/data/words.json"));
+        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/lib/words.json"));
         Word[] words = gson.fromJson(jsonFile, Word[].class);
         
 
