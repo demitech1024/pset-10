@@ -15,13 +15,17 @@ import java.util.Arrays;
 
 import graphics.Display;
 import data.Word;
+import controller.Utils;
 
 public class Application {
     public static void main(String[] args) throws IOException {
 
-        Gson gson = new Gson();
-        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/lib/words.json"));
-        Word[] words = gson.fromJson(jsonFile, Word[].class);
+        Word[] words = Utils.readJsonFile();
+        words = Utils.sort("desc", words);
+        
+        for (Word word : words) {
+            System.out.println(word.getWord());
+        }
         
 
         // JFrame frame = Display.createFrame();
@@ -29,25 +33,5 @@ public class Application {
         // frame.setVisible(true);
     }
 
-    public void updateJsonFile(Word[] words) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (Writer writer = new FileWriter(System.getProperty("user.dir") + "/lib/words.json")) {
-            gson.toJson(words, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static Word[] readJsonFile() {
-        Gson gson = new Gson();
-        BufferedReader jsonFile = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/lib/words.json"));
-        Word[] words = gson.fromJson(jsonFile, Word[].class);
-        
-        return words;
-    }
-
-
-    public void updateWords() {
-        
-    }
 }

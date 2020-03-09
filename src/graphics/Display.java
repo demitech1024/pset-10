@@ -13,7 +13,7 @@ import javax.swing.event.ListSelectionListener;
 import data.Word;
 
 
-public class Display extends JFrame implements ListSelectionListener, DocumentListener {
+public class Display extends JFrame {
     private static final long serialVersionUID = 1L;
     
     private JPanel rootPanel;
