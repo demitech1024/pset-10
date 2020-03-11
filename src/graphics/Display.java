@@ -66,6 +66,10 @@ public class Display extends JFrame implements ListSelectionListener, DocumentLi
         return selection;
     }
 
+    public void setSelection(String newSelection) {
+        this.selection = newSelection;
+    }
+
     public Word[] getDisplayWords() {
         return displayWords;
     }
