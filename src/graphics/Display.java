@@ -58,6 +58,22 @@ public class Display extends JFrame implements ListSelectionListener, DocumentLi
         return descButton;
     }
 
+    public Window getWindow() {
+        return window;
+    }
+
+    public String getSelection() {
+        return selection;
+    }
+
+    public Word[] getDisplayWords() {
+        return displayWords;
+    }
+
+    public Word[] setDisplayWords(Word[] words) {
+        this.displayWords = words;
+    }
+
     public void initializeDisplay() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Michael's Dictionary");
