@@ -1,41 +1,32 @@
 package graphics;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.awt.event.*;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+import javax.swing.event.*;
+
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.*;
 
 import data.Word;
 import graphics.*;
 
 
-public class Display extends JFrame implements ListSelectionListener, DocumentListener {
-    private static final long serialVersionUID = 1L;
+public class Display {
+    private JFrame dictFrame;
+    private JTextField txtSearch;
+    private final ButtonGroup buttonGroup = new ButtonGroup();
+    private JTextField textField;
+    private JTextField definitionField;
+    private JTextField textFielda;
+    private JTextField textFieldb;
+    private JTextField textFieldc;
+
     
-    private Word[] displayWords;
-    private JScrollPane tbScrollPane;
-    private JScrollPane winScrollPane;
-    private String selection = null;
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private Toolbar toolbar;
-    private Window window;
-    private JList wordsList;
-    private JButton button;
-    private JButton addButton;
-    private JButton removeButton;
-    private JButton ascButton;
-    private JButton descButton;
+    
 
     public Display(Word[] words) {
         this.words = words;

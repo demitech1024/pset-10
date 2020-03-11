@@ -21,11 +21,9 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         Word[] words = Utils.readJsonFile();
-        words = Utils.sort("desc", words);
+        words = Utils.sort("asc", words);
         
-        for (Word word : words) {
-            System.out.println(word.getWord());
-        }
+        
         
 
         // JFrame frame = Display.createFrame();
