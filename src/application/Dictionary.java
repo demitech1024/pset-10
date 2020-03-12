@@ -257,9 +257,9 @@ public class Dictionary {
     doc.insertString(doc.getLength(),"Antonyms\n", header );
     doc.insertString(doc.getLength(),"\n1.Antonym ", null );
 
-    JScrollPane scrollPane_1 = new JScrollPane();
-    scrollPane_1.setBounds(12, 114, 179, 446);
-    frmDictionary.getContentPane().add(scrollPane_1);
+    JScrollPane scrollPane1 = new JScrollPane();
+    scrollPane1.setBounds(12, 114, 179, 446);
+    frmDictionary.getContentPane().add(scrollPane1);
 
     JList<String> list = new JList<String>();
     list.addListSelectionListener(new ListSelectionListener() {
@@ -318,7 +318,7 @@ public class Dictionary {
         }
       }
     });
-    scrollPane_1.setViewportView(list);
+    scrollPane1.setViewportView(list);
 
     DefaultListModel<String> DLM =  getWords();
 
