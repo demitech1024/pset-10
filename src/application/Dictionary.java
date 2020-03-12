@@ -260,7 +260,7 @@ public class Dictionary {
 
           try {
             ArrayList<Words> Words = getWordClass();
-            for(Words word: Words) {
+            for (Words word: Words) {
               if (word.getWord().equals(selectedWord)) {
                 doc.remove(0, doc.getLength());
                 doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n", bigWord);
@@ -278,7 +278,7 @@ public class Dictionary {
                   doc.insertString(doc.getLength(),"Synonyms\n", header);
                   doc.insertString(doc.getLength(),"\n", null);
                   int synonymCounter = 1;
-                  for(String synonym : synonyms) {
+                  for (String synonym : synonyms) {
                     doc.insertString(doc.getLength(), synonymCounter + "." + synonym + "\n", null);
                     synonymCounter++;
                   }
@@ -289,7 +289,7 @@ public class Dictionary {
                   doc.insertString(doc.getLength(),"Antonyms\n", header);
                   doc.insertString(doc.getLength(),"\n", null);
                   int antonymCounter = 1;
-                  for(String antonym : antonyms) {
+                  for (String antonym : antonyms) {
                     doc.insertString(doc.getLength(), antonymCounter + "." + antonym + "\n", null);
                     antonymCounter++;
                   }
@@ -405,7 +405,7 @@ public class Dictionary {
           Boolean wordFound = false;
       ArrayList<Words> words = getWordClass();
       ArrayList<Words> wordsToRemove = new ArrayList<Words>();
-      for(String selectedWord : selectedWords) {
+      for (String selectedWord : selectedWords) {
         for (Words word : words) {
                 if (selectedWord.equals(word.getWord())) {
                   wordsToRemove.add(word);
@@ -563,7 +563,7 @@ public class Dictionary {
           }
         }
         DefaultListModel<String> filtered = new DefaultListModel<String>();
-        for(int i = 0 ; i < words.size(); i++) {
+        for (int i = 0 ; i < words.size(); i++) {
           if ((words.get(i).startsWith(searched))) {
             filtered.addElement(words.get(i));
           }
