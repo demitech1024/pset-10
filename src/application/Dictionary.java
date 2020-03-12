@@ -251,7 +251,7 @@ public class Dictionary {
     list.addListSelectionListener(new ListSelectionListener() {
       boolean ranOnce = false;
       public void valueChanged(ListSelectionEvent arg0) {
-        if(ranOnce) {
+        if (ranOnce) {
           ranOnce = false;
         } else {
           ranOnce = true;
@@ -261,7 +261,7 @@ public class Dictionary {
           try {
             ArrayList<Words> Words = getWordClass();
             for(Words word: Words) {
-              if(word.getWord().equals(selectedWord)) {
+              if (word.getWord().equals(selectedWord)) {
                 doc.remove(0, doc.getLength());
                 doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n", bigWord);
                 doc.insertString(doc.getLength(),"\n", null);
@@ -274,7 +274,7 @@ public class Dictionary {
                   definitionCounter++;
                 }
                 String[] synonyms = word.getSynonyms();
-                if(synonyms != null && synonyms.length != 0) {
+                if (synonyms != null && synonyms.length != 0) {
                   doc.insertString(doc.getLength(),"Synonyms\n", header);
                   doc.insertString(doc.getLength(),"\n", null);
                   int synonymCounter = 1;
@@ -336,7 +336,7 @@ public class Dictionary {
         String synonymInput = textFieldA.getText().toLowerCase();
         String antonymsInput = textFieldC.getText().toLowerCase();
         word = word.trim();
-      	  if(!word.equals("") && !definitionInput.equals("") && !posInput.equals("")) {
+      	  if (!word.equals("") && !definitionInput.equals("") && !posInput.equals("")) {
       		 ArrayList<Words> wordList = new ArrayList<Words>();
          	  try {
      			    wordList = getWordClass();
@@ -348,15 +348,15 @@ public class Dictionary {
          	  String[] synonyms = synonymInput.split("\\s*,\\s*");
          	  String[] antonyms = antonymsInput.split("\\s*,\\s*");
          	  
-         	  if(definitions.length == poss.length) {
+         	  if (definitions.length == poss.length) {
          		  Definitions[] deffs = new Definitions[definitions.length];
              	  for (int i = 0; i < definitions.length; i++) {
              		  deffs[i] = new Definitions(definitions[i],poss[i]);
              	  }
-             	  if(synonymInput.equals("")) {
+             	  if (synonymInput.equals("")) {
              		 synonyms = null;
              	  }
-             	 if(antonymsInput.equals("")) {
+             	 if (antonymsInput.equals("")) {
              		antonyms = null;
              	  }
              	  Words wordToAdd = new Words(word, deffs, synonyms, antonyms);
@@ -407,15 +407,15 @@ public class Dictionary {
       ArrayList<Words> wordsToRemove = new ArrayList<Words>();
       for(String selectedWord : selectedWords) {
         for (Words word : words) {
-                if(selectedWord.equals(word.getWord())) {
+                if (selectedWord.equals(word.getWord())) {
                   wordsToRemove.add(word);
                   wordFound = true;
                 }
             }
           }
-      if(wordFound) {
+      if (wordFound) {
     	  int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete the following word(s)\nfrom the ditionary?\n\nThis action cannot be undone.\n\n","Warning",JOptionPane.YES_NO_OPTION);
-    	  if(dialogResult == JOptionPane.YES_OPTION){
+    	  if (dialogResult == JOptionPane.YES_OPTION){
     		  for (Words word: wordsToRemove) {
     	          words.remove(word);
     	        }
@@ -564,7 +564,7 @@ public class Dictionary {
         }
         DefaultListModel<String> filtered = new DefaultListModel<String>();
         for(int i = 0 ; i < words.size(); i++) {
-          if((words.get(i).startsWith(searched))) {
+          if ((words.get(i).startsWith(searched))) {
             filtered.addElement(words.get(i));
           }
         }
