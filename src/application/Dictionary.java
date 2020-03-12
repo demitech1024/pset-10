@@ -80,28 +80,27 @@ public class Dictionary {
 //  get DLM of words sorted in asc order
   private static DefaultListModel<String> getWords() throws FileNotFoundException{
     Gson gson = new Gson();
-        String presentDir = Utils.getPresentDir();
-        BufferedReader br = new BufferedReader(new FileReader(presentDir + "words.json"));
-        Words[] words = gson.fromJson(br, Words[].class);
-        DefaultListModel<String> listOfWords = new DefaultListModel<String>();
-        for (Words word : words) {
-          listOfWords.addElement(word.getWord().toLowerCase());
-        }
-        return  Utils.sortWordsAsc(listOfWords);
+    String presentDir = Utils.getPresentDir();
+    BufferedReader br = new BufferedReader(new FileReader(presentDir + "words.json"));
+    Words[] words = gson.fromJson(br, Words[].class);
+    DefaultListModel<String> listOfWords = new DefaultListModel<String>();
+    for (Words word : words) {
+      listOfWords.addElement(word.getWord().toLowerCase());
+    }
+    return  Utils.sortWordsAsc(listOfWords);
   }
 
 //  get ArrayList of words sorted in asc order
-  private static ArrayList<Words> getWordClass() throws FileNotFoundException{
+  private static ArrayList<Words> getWordClass() throws FileNotFoundException {
     Gson gson = new Gson();
-        String presentDir = Utils.getPresentDir();
-        BufferedReader br = new BufferedReader(new FileReader(presentDir + "words.json"));
-        Words[] words = gson.fromJson(br, Words[].class);
-        ArrayList<Words> listOfWords = new ArrayList<Words>();
-        for (Words word : words) {
-          listOfWords.add(word);
-        }
-       ;
-        return listOfWords;
+    String presentDir = Utils.getPresentDir();
+    BufferedReader br = new BufferedReader(new FileReader(presentDir + "words.json"));
+    Words[] words = gson.fromJson(br, Words[].class);
+    ArrayList<Words> listOfWords = new ArrayList<Words>();
+    for (Words word : words) {
+      listOfWords.add(word);
+    }
+    return listOfWords;
   }
 
   /**
