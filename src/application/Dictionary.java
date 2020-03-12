@@ -468,10 +468,10 @@ public class Dictionary {
             e1.printStackTrace();
           }
         }
-      list.setModel(DLM);
-      txtSearch.setText("");
-      doc.remove(0, doc.getLength());
-      doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
+        list.setModel(DLM);
+        txtSearch.setText("");
+        doc.remove(0, doc.getLength());
+        doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
         doc.insertString(doc.getLength(),"\n" , null );
         doc.insertString(doc.getLength(),"Definitions\n" ,header );
         doc.insertString(doc.getLength(),"\n" ,null );
