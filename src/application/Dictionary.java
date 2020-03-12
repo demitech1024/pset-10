@@ -87,7 +87,6 @@ public class Dictionary {
         for (Words word : words) {
           listOfWords.addElement(word.getWord().toLowerCase());
         }
-       ;
         return  Utils.sortWordsAsc(listOfWords);
   }
 
