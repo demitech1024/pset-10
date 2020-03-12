@@ -55,9 +55,9 @@ public class Dictionary {
   private final ButtonGroup buttonGroup = new ButtonGroup();
   private JTextField textField;
   private JTextField txtDefinitions;
-  private JTextField textField_2;
-  private JTextField textField_1;
-  private JTextField textField_3;
+  private JTextField textFieldB;
+  private JTextField textFieldA;
+  private JTextField textFieldC;
 
   /**
    * Launch the application.
@@ -150,9 +150,9 @@ public class Dictionary {
     panel_1.add(textField);
     textField.setColumns(10);
     
-    JButton btnNewButton_2 = new JButton("Add");
-    btnNewButton_2.setBounds(465, 513, 89, 23);
-    panel_1.add(btnNewButton_2);
+    JButton newButton = new JButton("Add");
+    newButton.setBounds(465, 513, 89, 23);
+    panel_1.add(newButton);
     
     JLabel lblDefinitions = new JLabel("Definitions*");
     lblDefinitions.setFont(new Font("Tahoma", Font.BOLD, 32));
@@ -165,11 +165,11 @@ public class Dictionary {
     txtDefinitions.setBounds(20, 182, 286, 20);
     panel_1.add(txtDefinitions);
     
-    textField_2 = new JTextField();
-    textField_2.setToolTipText("Part of Speech");
-    textField_2.setColumns(10);
-    textField_2.setBounds(346, 182, 147, 20);
-    panel_1.add(textField_2);
+    textFieldB = new JTextField();
+    textFieldB.setToolTipText("Part of Speech");
+    textFieldB.setColumns(10);
+    textFieldB.setBounds(346, 182, 147, 20);
+    panel_1.add(textFieldB);
     
     JLabel lblPartOfSpech = new JLabel("Parts of Speech*");
     lblPartOfSpech.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -181,11 +181,11 @@ public class Dictionary {
     lblSynonyms.setBounds(10, 213, 184, 54);
     panel_1.add(lblSynonyms);
     
-    textField_1 = new JTextField();
-    textField_1.setToolTipText("synonym");
-    textField_1.setColumns(10);
-    textField_1.setBounds(20, 287, 286, 20);
-    panel_1.add(textField_1);
+    textFieldA = new JTextField();
+    textFieldA.setToolTipText("synonym");
+    textFieldA.setColumns(10);
+    textFieldA.setBounds(20, 287, 286, 20);
+    panel_1.add(textFieldA);
     
     JLabel lblSeperateByComma = new JLabel("Seperate by comma");
     lblSeperateByComma.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -212,11 +212,11 @@ public class Dictionary {
     label_2.setBounds(20, 369, 137, 20);
     panel_1.add(label_2);
     
-    textField_3 = new JTextField();
-    textField_3.setToolTipText("antonyms");
-    textField_3.setColumns(10);
-    textField_3.setBounds(20, 400, 286, 20);
-    panel_1.add(textField_3);
+    textFieldC = new JTextField();
+    textFieldC.setToolTipText("antonyms");
+    textFieldC.setColumns(10);
+    textFieldC.setBounds(20, 400, 286, 20);
+    panel_1.add(textFieldC);
     
     JLabel lblRequred = new JLabel("* = required");
     lblRequred.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -326,31 +326,31 @@ public class Dictionary {
 
     list.setModel(DLM);
     
-    JRadioButton rdbtnNewRadioButton = new JRadioButton("Asc");
-    JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Desc");
+    JRadioButton newRadioButton = new JRadioButton("Asc");
+    JRadioButton newRadioButtonA = new JRadioButton("Desc");
 
-    JButton btnNewButton = new JButton("Add");
-    btnNewButton.addActionListener(new ActionListener() {
+    JButton newButtona = new JButton("Add");
+    newButtona.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         cardLayout.show(panel, "addWord"); 
         textField.setText("");
         txtDefinitions.setText("");
-        textField_2.setText("");
-        textField_1.setText("");
-        textField_3.setText("");
+        textFieldB.setText("");
+        textFieldA.setText("");
+        textFieldC.setText("");
           
       }
     });
-    btnNewButton.setBounds(2, 11, 89, 23);
-    frmDictionary.getContentPane().add(btnNewButton);
+    newButtona.setBounds(2, 11, 89, 23);
+    frmDictionary.getContentPane().add(newButtona);
 
-    btnNewButton_2.addActionListener(new ActionListener() {
+    newButton.addActionListener(new ActionListener() {
     	public void actionPerformed(ActionEvent e) {    		
     	  String word = textField.getText().toLowerCase();
         String definitionInput = txtDefinitions.getText().toLowerCase();
-        String posInput = textField_2.getText().toLowerCase();
-        String synonymInput = textField_1.getText().toLowerCase();
-        String antonymsInput = textField_3.getText().toLowerCase();
+        String posInput = textFieldB.getText().toLowerCase();
+        String synonymInput = textFieldA.getText().toLowerCase();
+        String antonymsInput = textFieldC.getText().toLowerCase();
         word = word.trim();
       	  if(!word.equals("") && !definitionInput.equals("") && !posInput.equals("")) {
       		 ArrayList<Words> wordList = new ArrayList<Words>();
@@ -385,7 +385,7 @@ public class Dictionary {
                          e1.printStackTrace( );
                      }
                 DefaultListModel<String> DLM = null;
-                if (!rdbtnNewRadioButton.isSelected()) {
+                if (!newRadioButton.isSelected()) {
    			     try {
    			     	DLM = Utils.reverseOrder(getWords());
    			   } catch (FileNotFoundException e2) {
@@ -413,8 +413,8 @@ public class Dictionary {
     	}
     });
     
-    JButton btnNewButton_1 = new JButton("Remove");
-    btnNewButton_1.addActionListener(new ActionListener() {
+    JButton removeButton = new JButton("Remove");
+    removeButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent arg0) {
     List<String> selectedWords = list.getSelectedValuesList();
         try {
@@ -452,7 +452,7 @@ public class Dictionary {
     }
         DefaultListModel<String> DLM = null;
     try {  
-        if (!rdbtnNewRadioButton.isSelected()) {
+        if (!newRadioButton.isSelected()) {
             try {
             	DLM = Utils.reverseOrder(getWords());
           } catch (FileNotFoundException e2) {
@@ -492,23 +492,23 @@ public class Dictionary {
       }
     });
 
-    btnNewButton_1.setBounds(101, 11, 89, 23);
-    frmDictionary.getContentPane().add(btnNewButton_1);
+    removeButton.setBounds(101, 11, 89, 23);
+    frmDictionary.getContentPane().add(removeButton);
 
     JScrollPane scrollPane = new JScrollPane();
     scrollPane.setBounds(490, 332, -57, -98);
     frmDictionary.getContentPane().add(scrollPane);
    
-    buttonGroup.add(rdbtnNewRadioButton);
-    rdbtnNewRadioButton.setBounds(36, 78, 59, 23);
-    frmDictionary.getContentPane().add(rdbtnNewRadioButton);
-    rdbtnNewRadioButton.setSelected(true);
+    buttonGroup.add(newRadioButton);
+    newRadioButton.setBounds(36, 78, 59, 23);
+    frmDictionary.getContentPane().add(newRadioButton);
+    newRadioButton.setSelected(true);
 
     
-    buttonGroup.add(rdbtnNewRadioButton_1);
-    rdbtnNewRadioButton_1.setBounds(110, 78, 59, 23);
-    frmDictionary.getContentPane().add(rdbtnNewRadioButton_1);
-    rdbtnNewRadioButton_1.addItemListener(new ItemListener() {
+    buttonGroup.add(newRadioButtonA);
+    newRadioButtonA.setBounds(110, 78, 59, 23);
+    frmDictionary.getContentPane().add(newRadioButtonA);
+    newRadioButtonA.addItemListener(new ItemListener() {
 //       select asc or desc order
         @Override
         public void itemStateChanged(ItemEvent event) {
@@ -567,7 +567,7 @@ public class Dictionary {
       public void keyReleased(KeyEvent e) {
         String searched = txtSearch.getText().toLowerCase();
         DefaultListModel<String> words = new DefaultListModel<String>();
-        if (!rdbtnNewRadioButton.isSelected()) {
+        if (!newRadioButton.isSelected()) {
             try {
               words = Utils.reverseOrder(getWords());
           } catch (FileNotFoundException e2) {
