@@ -77,7 +77,6 @@ public class Dictionary {
     });
   }
 
-//  get DLM of words sorted in asc order
   private static DefaultListModel<String> getWords() throws FileNotFoundException{
     Gson gson = new Gson();
     String presentDir = Utils.getPresentDir();
