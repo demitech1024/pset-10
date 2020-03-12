@@ -304,6 +304,7 @@ public class Dictionary {
         }
       }
     });
+    
     scrollPane1.setViewportView(list);
 
     DefaultListModel<String> DLM =  getWords();
