@@ -195,10 +195,10 @@ public class Dictionary {
     label.setBounds(20, 157, 137, 20);
     panel1.add(label);
     
-    JLabel label_1 = new JLabel("Seperate by comma");
-    label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-    label_1.setBounds(346, 161, 137, 20);
-    panel1.add(label_1);
+    JLabel label1 = new JLabel("Seperate by comma");
+    label1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+    label1.setBounds(346, 161, 137, 20);
+    panel1.add(label1);
     
     JLabel lblAntonyms = new JLabel("Antonyms");
     lblAntonyms.setFont(new Font("Tahoma", Font.BOLD, 32));
