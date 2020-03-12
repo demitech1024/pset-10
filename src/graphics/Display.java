@@ -25,12 +25,20 @@ public class Display {
     private JTextField textFieldb;
     private JTextField textFieldc;
 
-    
+
     
 
     public Display(Word[] words) {
         this.words = words;
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    initializeDisplay();
+                }
+            }
+        });
         initializeDisplay();
+        
     }
 
     public JButton getAddButton() {
@@ -70,6 +78,47 @@ public class Display {
     }
 
     public void initializeDisplay() {
+        dictFrame = new JFrame();
+        dictFrame.setResizable(false);
+        dictFrame.setTitle("Michael's Dictionary");
+        dictFrame.setBounds(100,100,800,600);
+        dictFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        dictFrame.getContentPane().setLayout(null);
+
+        JPanel panel = new JPanel();
+        panel.setBounds(207,11,566,549);
+        dictFrame.getContentPane().add(panel);
+        panel.setLayout(new CardLayout(0,0));
+
+        JScrollPane scrollPanec = new JScrollPane();
+        panel.add(scrollPanec, "addWord");
+
+        JPanel panel1 = new JPanel();
+        panel1.setToolTipText("");
+        panel1.setBackground(Color.WHITE);
+        scrollPanec.setViewportView(panel1);
+        panel1.setLayout(null);
+
+        JLabel newLabel = new JLabel("Word*");
+        newLabel.setFont(new Font("Tahoma", Font.BOLD, 32));
+        newLabel.setBounds(10, 11, 117, 54);
+        panel1.add(newLabel);
+
+        textField = new JTextField();
+        textField.setToolTipText("word");
+        textField.setBounds(20,76,286,20);
+        panel1.add(textField);
+        textField.setColumns(10);
+
+        JButton addButton = new JButon("Add");
+        addButton.setBounds(465,513,89,23);
+        panel1.add(addButton);
+
+        JLabel textDefinitions = new JLabel("Definitions");
+        textDefinitions.setFont(new Font("Tahoma", Font.BOLD, 32));
+        textDefinitions.setBounds(10, 107, 199, 54);
+
+        
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Michael's Dictionary");
         setLayout(new BorderLayout());
