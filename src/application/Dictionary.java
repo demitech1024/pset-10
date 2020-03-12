@@ -576,7 +576,6 @@ public class Dictionary {
           try {
             words = getWords();
           } catch (FileNotFoundException e1) {
-             
             e1.printStackTrace();
           }
         }
@@ -588,8 +587,8 @@ public class Dictionary {
         }
         list.setModel(filtered);
         try {
-			doc.remove(0, doc.getLength());
-			doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
+          doc.remove(0, doc.getLength());
+          doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
 	        doc.insertString(doc.getLength(),"\n" , null );
 	        doc.insertString(doc.getLength(),"Definitions\n" ,header );
 	        doc.insertString(doc.getLength(),"\n" ,null );
@@ -600,10 +599,10 @@ public class Dictionary {
 	        doc.insertString(doc.getLength(),"\n\n" ,null );
 	        doc.insertString(doc.getLength(),"Antonyms\n" ,header );
 	        doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
-		} catch (BadLocationException e1) {
+		    } catch (BadLocationException e1) {
 			 
-			e1.printStackTrace();
-		}
+			    e1.printStackTrace();
+		    }
       
 
       }
