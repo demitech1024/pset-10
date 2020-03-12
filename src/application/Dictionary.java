@@ -128,13 +128,13 @@ public class Dictionary {
     frmDictionary.getContentPane().add(panel);
     panel.setLayout(new CardLayout(0, 0));
     
-    JScrollPane scrollPane_3 = new JScrollPane();
-    panel.add(scrollPane_3, "addWord");
+    JScrollPane scrollPane3 = new JScrollPane();
+    panel.add(scrollPane3, "addWord");
     
     JPanel panel1 = new JPanel();
     panel1.setToolTipText("");
     panel1.setBackground(Color.WHITE);
-    scrollPane_3.setViewportView(panel1);
+    scrollPane3.setViewportView(panel1);
     panel1.setLayout(null);
     
     JLabel lblNewLabel = new JLabel("Word*");
