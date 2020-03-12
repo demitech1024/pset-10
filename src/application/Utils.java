@@ -11,7 +11,7 @@ import application.Dictionary;
 public class Utils {
   public static String getPresentDir() {
     String presentDir = System.getProperty("user.dir");
-      
+    
     return presentDir + "/lib/";
   }
 
