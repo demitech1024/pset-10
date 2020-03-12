@@ -1,15 +1,14 @@
 package data;
 
-import java.util.ArrayList;
+import data.Definitions;
 
-
-public class Word {
+public class Words {
     private String word;
-    private Definition[] definitions;
+    private Definitions[] definitions;
     private String[] synonyms;
     private String[] antonyms;
 
-    public Word(String word, Definition[] definitions, String[] synonyms, String[] antonyms) {
+    public Words(String word, Definitions[] definitions, String[] synonyms, String[] antonyms) {
         this.word = word;
         this.definitions = definitions;
         this.synonyms = synonyms;
@@ -24,11 +23,11 @@ public class Word {
         this.word = word;
     }
 
-    public Definition[] getDefinitions() {
-        return definitions;
+    public Definitions[] getDefinitions() {
+        return this.definitions;
     }
 
-    public void setDefinitions(Definition[] definitions) {
+    public void setDefinitions(Definitions[] definitions) {
         this.definitions = definitions;
     }
 
@@ -39,7 +38,6 @@ public class Word {
     public void setSynonyms(String[] synonyms) {
         this.synonyms = synonyms;
     }
-
     public String[] getAntonyms() {
         return this.antonyms;
     }
@@ -48,5 +46,5 @@ public class Word {
         this.antonyms = antonyms;
     }
 
-    
+
 }
