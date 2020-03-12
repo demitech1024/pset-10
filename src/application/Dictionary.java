@@ -205,10 +205,10 @@ public class Dictionary {
     lblAntonyms.setBounds(10, 318, 184, 54);
     panel1.add(lblAntonyms);
     
-    JLabel label_2 = new JLabel("Seperate by comma");
-    label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-    label_2.setBounds(20, 369, 137, 20);
-    panel1.add(label_2);
+    JLabel label2 = new JLabel("Seperate by comma");
+    label2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+    label2.setBounds(20, 369, 137, 20);
+    panel1.add(label2);
     
     textFieldC = new JTextField();
     textFieldC.setToolTipText("antonyms");
