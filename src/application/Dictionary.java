@@ -269,7 +269,7 @@ public class Dictionary {
       public void valueChanged(ListSelectionEvent arg0) {
         if(ranOnce) {
           ranOnce = false;
-        }else {
+        } else {
           ranOnce = true;
 
           String selectedWord = list.getSelectedValue();
@@ -295,7 +295,6 @@ public class Dictionary {
                   doc.insertString(doc.getLength(),"\n" ,null );
                   int synonymCounter = 1;
                   for(String synonym : synonyms) {
-
                     doc.insertString(doc.getLength(), synonymCounter + "." + synonym + "\n", null);
                     synonymCounter++;
                   }
@@ -332,7 +331,6 @@ public class Dictionary {
 
     JButton btnNewButton = new JButton("Add");
     btnNewButton.addActionListener(new ActionListener() {
-//      add
       public void actionPerformed(ActionEvent e) {
           cardLayout.show(panel, "addWord"); 
           textField.setText("");
