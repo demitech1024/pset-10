@@ -110,11 +110,7 @@ public class Dictionary {
     initialize();
   }
 
-  /**
-   * Initialize the contents of the frame.
-   * @throws FileNotFoundException
-   * @throws BadLocationException
-   */
+
   private void initialize() throws FileNotFoundException, BadLocationException {
     frmDictionary = new JFrame();
     frmDictionary.setResizable(false);
