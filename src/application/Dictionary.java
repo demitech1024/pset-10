@@ -237,13 +237,12 @@ public class Dictionary {
     DefaultCaret caret = (DefaultCaret) textPane.getCaret();
     caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
     textPane.setBorder(BorderFactory.createCompoundBorder(
-        textPane.getBorder(),
-            BorderFactory.createEmptyBorder(10, 10 ,10 , 10)));
+      textPane.getBorder(),
+      BorderFactory.createEmptyBorder(10, 10 ,10 , 10)));
     
     Style bigWord = textPane.addStyle("Style", null);
     Style header = textPane.addStyle("Style", null);
     StyleConstants.setFontSize(header, 20);
-//    StyleConstants.setBold(header, true);
     StyleConstants.setFontSize(bigWord, 36);
     StyleConstants.setBold(bigWord, true);
 
