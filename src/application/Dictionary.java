@@ -90,7 +90,6 @@ public class Dictionary {
     return  Utils.sortWordsAsc(listOfWords);
   }
 
-//  get ArrayList of words sorted in asc order
   private static ArrayList<Words> getWordClass() throws FileNotFoundException {
     Gson gson = new Gson();
     String presentDir = Utils.getPresentDir();
