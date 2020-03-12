@@ -509,7 +509,6 @@ public class Dictionary {
     newRadioButtonA.setBounds(110, 78, 59, 23);
     frmDictionary.getContentPane().add(newRadioButtonA);
     newRadioButtonA.addItemListener(new ItemListener() {
-//       select asc or desc order
         @Override
         public void itemStateChanged(ItemEvent event) {
 
