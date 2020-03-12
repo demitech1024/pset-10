@@ -566,10 +566,9 @@ public class Dictionary {
         String searched = txtSearch.getText().toLowerCase();
         DefaultListModel<String> words = new DefaultListModel<String>();
         if (!newRadioButton.isSelected()) {
-            try {
-              words = Utils.reverseOrder(getWords());
+          try {
+            words = Utils.reverseOrder(getWords());
           } catch (FileNotFoundException e2) {
-             
             e2.printStackTrace();
           }
 

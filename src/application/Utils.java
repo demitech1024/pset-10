@@ -16,18 +16,17 @@ public class Utils {
       return presentDir + "/lib/";
     }
 
-//    Sorts DLM in ascending order
     public static DefaultListModel<String> sortWordsAsc(DefaultListModel<String> listOfWords) {
       String temp;
       int n = listOfWords.getSize();
       for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
-               if ((listOfWords.get(i).compareTo(listOfWords.get(j)) > 0)) {
-                 temp = listOfWords.get(i);
-                   listOfWords.set(i, listOfWords.get(j));
-                   listOfWords.set(j, temp);
-               }
-           }
+          if ((listOfWords.get(i).compareTo(listOfWords.get(j)) > 0)) {
+            temp = listOfWords.get(i);
+            listOfWords.set(i, listOfWords.get(j));
+            listOfWords.set(j, temp);
+          }
+        }
       }
       return listOfWords;
     }
