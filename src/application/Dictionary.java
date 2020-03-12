@@ -347,18 +347,17 @@ public class Dictionary {
     btnNewButton_2.addActionListener(new ActionListener() {
     	public void actionPerformed(ActionEvent e) {    		
     	  String word = textField.getText().toLowerCase();
-      	  String definitionInput = txtDefinitions.getText().toLowerCase();
-      	  String posInput = textField_2.getText().toLowerCase();
-      	  String synonymInput = textField_1.getText().toLowerCase();
-      	  String antonymsInput = textField_3.getText().toLowerCase();
-      	  word = word.trim();
+        String definitionInput = txtDefinitions.getText().toLowerCase();
+        String posInput = textField_2.getText().toLowerCase();
+        String synonymInput = textField_1.getText().toLowerCase();
+        String antonymsInput = textField_3.getText().toLowerCase();
+        word = word.trim();
       	  if(!word.equals("") && !definitionInput.equals("") && !posInput.equals("")) {
       		 ArrayList<Words> wordList = new ArrayList<Words>();
          	  try {
-     			wordList = getWordClass();
+     			    wordList = getWordClass();
          	  } catch (FileNotFoundException e1) {
-     			 
-     			e1.printStackTrace();
+     			    e1.printStackTrace();
          	  }
          	  String[] definitions = definitionInput.split("\\s*,\\s*");
          	  String[] poss = posInput.split("\\s*,\\s*");
