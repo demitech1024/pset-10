@@ -238,7 +238,7 @@ public class Dictionary {
     caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
     textPane.setBorder(BorderFactory.createCompoundBorder(
       textPane.getBorder(),
-      BorderFactory.createEmptyBorder(10, 10 ,10 , 10)));
+      BorderFactory.createEmptyBorder(10, 10, 10,  10)));
     
     Style bigWord = textPane.addStyle("Style", null);
     Style header = textPane.addStyle("Style", null);
@@ -247,17 +247,17 @@ public class Dictionary {
     StyleConstants.setBold(bigWord, true);
 
     doc.remove(0, doc.getLength());
-    doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
-    doc.insertString(doc.getLength(),"\n" , null );
-    doc.insertString(doc.getLength(),"Definitions\n" ,header );
-    doc.insertString(doc.getLength(),"\n" ,null );
-    doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
-    doc.insertString(doc.getLength(),"\n" ,null );
-    doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-    doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
-    doc.insertString(doc.getLength(),"\n\n" ,null );
-    doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-    doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
+    doc.insertString(doc.getLength(),"Example Word\n", bigWord );
+    doc.insertString(doc.getLength(),"\n",  null );
+    doc.insertString(doc.getLength(),"Definitions\n", header );
+    doc.insertString(doc.getLength(),"\n", null );
+    doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n", null );
+    doc.insertString(doc.getLength(),"\n", null );
+    doc.insertString(doc.getLength(),"Synonyms\n", header );
+    doc.insertString(doc.getLength(),"\n1.Synonym ", null );
+    doc.insertString(doc.getLength(),"\n\n", null );
+    doc.insertString(doc.getLength(),"Antonyms\n", header );
+    doc.insertString(doc.getLength(),"\n1.Antonym ", null );
 
     JScrollPane scrollPane_1 = new JScrollPane();
     scrollPane_1.setBounds(12, 114, 179, 446);
@@ -279,10 +279,10 @@ public class Dictionary {
             for(Words word: Words) {
               if(word.getWord().equals(selectedWord)) {
                 doc.remove(0, doc.getLength());
-                doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n" ,bigWord );
-                doc.insertString(doc.getLength(),"\n" ,null );
-                doc.insertString(doc.getLength(),"Definitions\n" ,header );
-                doc.insertString(doc.getLength(),"\n" ,null );
+                doc.insertString(doc.getLength(),selectedWord.substring(0, 1).toUpperCase() + selectedWord.substring(1) + "\n", bigWord );
+                doc.insertString(doc.getLength(),"\n", null );
+                doc.insertString(doc.getLength(),"Definitions\n", header );
+                doc.insertString(doc.getLength(),"\n", null );
                 Definitions[] definitions = word.getDefinitions();
                 int definitionCounter = 1;
                 for (Definitions definition : definitions) {
@@ -291,8 +291,8 @@ public class Dictionary {
                 }
                 String[] synonyms = word.getSynonyms();
                 if(synonyms != null && synonyms.length != 0) {
-                  doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-                  doc.insertString(doc.getLength(),"\n" ,null );
+                  doc.insertString(doc.getLength(),"Synonyms\n", header );
+                  doc.insertString(doc.getLength(),"\n", null );
                   int synonymCounter = 1;
                   for(String synonym : synonyms) {
                     doc.insertString(doc.getLength(), synonymCounter + "." + synonym + "\n", null);
@@ -301,9 +301,9 @@ public class Dictionary {
                 }
                 String[] antonyms = word.getAntonyms();
                 if (antonyms != null && antonyms.length != 0) {
-                  doc.insertString(doc.getLength(),"\n" ,null );
-                  doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-                  doc.insertString(doc.getLength(),"\n" ,null );
+                  doc.insertString(doc.getLength(),"\n", null );
+                  doc.insertString(doc.getLength(),"Antonyms\n", header );
+                  doc.insertString(doc.getLength(),"\n", null );
                   int antonymCounter = 1;
                   for(String antonym : antonyms) {
                     doc.insertString(doc.getLength(), antonymCounter + "." + antonym + "\n", null);
@@ -452,36 +452,35 @@ public class Dictionary {
     }
         DefaultListModel<String> DLM = null;
     try {  
-        if (!newRadioButton.isSelected()) {
-            try {
-            	DLM = Utils.reverseOrder(getWords());
-          } catch (FileNotFoundException e2) {
-             
-            e2.printStackTrace();
-          }
-
-        } else {
+      if (!newRadioButton.isSelected()) {
           try {
-        	  DLM = getWords();
-          } catch (FileNotFoundException e1) {
-             
-            e1.printStackTrace();
-          }
+            DLM = Utils.reverseOrder(getWords());
+        } catch (FileNotFoundException e2) {
+            
+          e2.printStackTrace();
         }
-        list.setModel(DLM);
-        txtSearch.setText("");
-        doc.remove(0, doc.getLength());
-        doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
-        doc.insertString(doc.getLength(),"\n" , null );
-        doc.insertString(doc.getLength(),"Definitions\n" ,header );
-        doc.insertString(doc.getLength(),"\n" ,null );
-        doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
-        doc.insertString(doc.getLength(),"\n" ,null );
-        doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-        doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
-        doc.insertString(doc.getLength(),"\n\n" ,null );
-        doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-        doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
+
+      } else {
+        try {
+          DLM = getWords();
+        } catch (FileNotFoundException e1) { 
+          e1.printStackTrace();
+        }
+      }
+      list.setModel(DLM);
+      txtSearch.setText("");
+      doc.remove(0, doc.getLength());
+      doc.insertString(doc.getLength(),"Example Word\n", bigWord );
+      doc.insertString(doc.getLength(),"\n",  null );
+      doc.insertString(doc.getLength(),"Definitions\n", header );
+      doc.insertString(doc.getLength(),"\n", null );
+      doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n", null );
+      doc.insertString(doc.getLength(),"\n", null );
+      doc.insertString(doc.getLength(),"Synonyms\n", header );
+      doc.insertString(doc.getLength(),"\n1.Synonym ", null );
+      doc.insertString(doc.getLength(),"\n\n", null );
+      doc.insertString(doc.getLength(),"Antonyms\n", header );
+      doc.insertString(doc.getLength(),"\n1.Antonym ", null );
     } catch (BadLocationException e) {
        
       e.printStackTrace();
@@ -518,17 +517,17 @@ public class Dictionary {
             txtSearch.setText("");
             list.setModel(Utils.reverseOrder(getWords()));
             doc.remove(0, doc.getLength());
-            doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
-            doc.insertString(doc.getLength(),"\n" , null );
-            doc.insertString(doc.getLength(),"Definitions\n" ,header );
-            doc.insertString(doc.getLength(),"\n" ,null );
-            doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
-            doc.insertString(doc.getLength(),"\n" ,null );
-            doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-            doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
-            doc.insertString(doc.getLength(),"\n\n" ,null );
-            doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-            doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
+            doc.insertString(doc.getLength(),"Example Word\n", bigWord );
+            doc.insertString(doc.getLength(),"\n",  null );
+            doc.insertString(doc.getLength(),"Definitions\n", header );
+            doc.insertString(doc.getLength(),"\n", null );
+            doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n", null );
+            doc.insertString(doc.getLength(),"\n", null );
+            doc.insertString(doc.getLength(),"Synonyms\n", header );
+            doc.insertString(doc.getLength(),"\n1.Synonym ", null );
+            doc.insertString(doc.getLength(),"\n\n", null );
+            doc.insertString(doc.getLength(),"Antonyms\n", header );
+            doc.insertString(doc.getLength(),"\n1.Antonym ", null );
           } catch (FileNotFoundException | BadLocationException e) {
           
             e.printStackTrace();
@@ -539,17 +538,17 @@ public class Dictionary {
             txtSearch.setText("");
             list.setModel(getWords());
             doc.remove(0, doc.getLength());
-            doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
-            doc.insertString(doc.getLength(),"\n" , null );
-            doc.insertString(doc.getLength(),"Definitions\n" ,header );
-            doc.insertString(doc.getLength(),"\n" ,null );
-            doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
-            doc.insertString(doc.getLength(),"\n" ,null );
-            doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-            doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
-            doc.insertString(doc.getLength(),"\n\n" ,null );
-            doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-            doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
+            doc.insertString(doc.getLength(),"Example Word\n", bigWord );
+            doc.insertString(doc.getLength(),"\n",  null );
+            doc.insertString(doc.getLength(),"Definitions\n", header );
+            doc.insertString(doc.getLength(),"\n", null );
+            doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n", null );
+            doc.insertString(doc.getLength(),"\n", null );
+            doc.insertString(doc.getLength(),"Synonyms\n", header );
+            doc.insertString(doc.getLength(),"\n1.Synonym ", null );
+            doc.insertString(doc.getLength(),"\n\n", null );
+            doc.insertString(doc.getLength(),"Antonyms\n", header );
+            doc.insertString(doc.getLength(),"\n1.Antonym ", null );
           } catch (FileNotFoundException | BadLocationException e) {
           
             e.printStackTrace();
@@ -588,17 +587,17 @@ public class Dictionary {
         list.setModel(filtered);
         try {
           doc.remove(0, doc.getLength());
-          doc.insertString(doc.getLength(),"Example Word\n" ,bigWord );
-	        doc.insertString(doc.getLength(),"\n" , null );
-	        doc.insertString(doc.getLength(),"Definitions\n" ,header );
-	        doc.insertString(doc.getLength(),"\n" ,null );
-	        doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n" ,null );
-	        doc.insertString(doc.getLength(),"\n" ,null );
-	        doc.insertString(doc.getLength(),"Synonyms\n" ,header );
-	        doc.insertString(doc.getLength(),"\n1.Synonym " ,null );
-	        doc.insertString(doc.getLength(),"\n\n" ,null );
-	        doc.insertString(doc.getLength(),"Antonyms\n" ,header );
-	        doc.insertString(doc.getLength(),"\n1.Antonym " ,null );
+          doc.insertString(doc.getLength(),"Example Word\n", bigWord );
+	        doc.insertString(doc.getLength(),"\n",  null );
+	        doc.insertString(doc.getLength(),"Definitions\n", header );
+	        doc.insertString(doc.getLength(),"\n", null );
+	        doc.insertString(doc.getLength(),"1. Example Word (pos) \n\n    Definition of example word\n\n", null );
+	        doc.insertString(doc.getLength(),"\n", null );
+	        doc.insertString(doc.getLength(),"Synonyms\n", header );
+	        doc.insertString(doc.getLength(),"\n1.Synonym ", null );
+	        doc.insertString(doc.getLength(),"\n\n", null );
+	        doc.insertString(doc.getLength(),"Antonyms\n", header );
+	        doc.insertString(doc.getLength(),"\n1.Antonym ", null );
 		    } catch (BadLocationException e1) {
 			 
 			    e1.printStackTrace();
