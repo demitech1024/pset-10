@@ -332,12 +332,12 @@ public class Dictionary {
     JButton btnNewButton = new JButton("Add");
     btnNewButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-          cardLayout.show(panel, "addWord"); 
-          textField.setText("");
-          txtDefinitions.setText("");
-          textField_2.setText("");
-          textField_1.setText("");
-          textField_3.setText("");
+        cardLayout.show(panel, "addWord"); 
+        textField.setText("");
+        txtDefinitions.setText("");
+        textField_2.setText("");
+        textField_1.setText("");
+        textField_3.setText("");
           
       }
     });
